@@ -1,0 +1,44 @@
+{
+  "squared": [
+    {
+      "name": "LinkedIn",
+      "url": "/qr-logos/linkedin.png"
+    },
+    {
+      "name": "Twitter",
+      "url": "/qr-logos/twitter.png"
+    },
+    {
+      "name": "X",
+      "url": "/qr-logos/twitter-x.png"
+    },
+    {
+      "name": "Facebook",
+      "url": "/qr-logos/facebook.png"
+    },
+    {
+      "name": "Google",
+      "url": "/qr-logos/google.png"
+    },
+    {
+      "name": "Reddit",
+      "url": "/qr-logos/reddit.png"
+    },
+    {
+      "name": "Twitch",
+      "url": "/qr-logos/twitch.png"
+    },
+    {
+      "name": "YouTube",
+      "url": "/qr-logos/youtube.png"
+    },
+    {
+      "name": "Instagram",
+      "url": "/qr-logos/instagram.png"
+    },
+    {
+      "name": "GitHub",
+      "url": "/qr-logos/github.png"
+    }
+  ]
+}
