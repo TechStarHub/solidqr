@@ -6,6 +6,7 @@ import {
   onCleanup,
   createEffect,
 } from "solid-js";
+import domToImage from "dom-to-image";
 import QrCode from "qrcode";
 import qrLogos from "./../../data/qr-logos.json";
 import QRLogo from "./QRLogo";
@@ -24,6 +25,7 @@ export default function QRGenerator() {
   const [qrLogo, setQRLogo] = createSignal("/qr-logos/default.png");
 
   let canvas: any;
+  let qrContainer: any;
 
   const handleDataInput = (e: any) => {
     setQRData(e.target.value);
@@ -44,6 +46,15 @@ export default function QRGenerator() {
     } catch (e) {
       console.log(e);
     }
+  };
+
+  const handleDownload = () => {
+    domToImage.toPng(qrContainer, { quality: 1 }).then((dataUrl) => {
+      var link = document.createElement("a");
+      link.download = "solidqr.png";
+      link.href = dataUrl;
+      link.click();
+    });
   };
 
   onMount(() => {
@@ -227,12 +238,18 @@ export default function QRGenerator() {
           >
             Generate QR
           </button>
+          <button
+            class="rounded p-2 bg-[#2c4e82] text-white"
+            onClick={handleDownload}
+          >
+            Download
+          </button>
         </div>
       </div>
 
       <div class="w-full h-full flex flex-col items-center justify-center">
         <h5 class="text-xl text-center font-bold mb-8">QR Code</h5>
-        <div class="w-fit h-fit relative  ">
+        <div class="w-fit h-fit relative p-1" ref={qrContainer}>
           <canvas ref={canvas} width={200} height={200} class=""></canvas>
           <Show when={addMedia() && qrData() != ""}>
             <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white p-1 rounded">
