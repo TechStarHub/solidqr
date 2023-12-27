@@ -8,7 +8,11 @@ export default function Header() {
       <A href="/" class="flex items-center gap-2">
         <Logo />
       </A>
-      <A href="/login" class="text-xl font-bold ">
+      <A
+        href="https://github.com/TechStarHub"
+        target="_blank"
+        class="text-xl font-bold "
+      >
         <span class="">
           <FiGithub class="w-6 h-6" />
         </span>
