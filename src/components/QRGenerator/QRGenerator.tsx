@@ -24,7 +24,7 @@ export default function QRGenerator() {
   const [qrDataType, setQRDataType] = createSignal("text");
   const [qrOptions, setQROptions] = createSignal(qrOption);
   const [addMedia, setAddMedia] = createSignal(false);
-  const [qrLogo, setQRLogo] = createSignal("/qr-logos/default.png");
+  const [qrLogo, setQRLogo] = createSignal("/qr-logos/solidqr.png");
 
   let canvas: any;
   let qrContainer: any;
