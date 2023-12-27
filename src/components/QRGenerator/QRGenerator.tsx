@@ -10,6 +10,8 @@ import domToImage from "dom-to-image";
 import QrCode from "qrcode";
 import qrLogos from "./../../data/qr-logos.json";
 import QRLogo from "./QRLogo";
+import { RiEditorAiGenerate } from "solid-icons/ri";
+import { FiDownload } from "solid-icons/fi";
 
 const qrOption = {
   quality: 1,
@@ -72,7 +74,7 @@ export default function QRGenerator() {
   });
 
   return (
-    <div class="px-4 py-8 shadow rounded w-full flex flex-col sm:flex-row ">
+    <div class="px-4 py-8 rounded w-full flex gap-6 sm:gap-2 flex-col sm:flex-row ">
       <div class="w-full">
         <div class="w-full flex items-center gap-2">
           <input
@@ -107,7 +109,7 @@ export default function QRGenerator() {
 
         <div class="w-full">
           <h5 class="text-xl my-2">QR Options</h5>
-          <div class="w-full flex items-center gap-4">
+          <div class="w-full flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4">
             <label
               for="qr-error-correction-level"
               class="flex items-center gap-2 "
@@ -231,18 +233,20 @@ export default function QRGenerator() {
           </div>
         </Show>
 
-        <div class="w-full flex items-center gap-2 mt-2">
+        <div class="w-full flex items-center gap-2 mt-4">
           <button
-            class="rounded p-2 bg-[#2c4e82] text-white"
+            class="rounded p-2 bg-[#2c4e82] hover:bg-[#244069] hover:shadow-lg transition-all duration-300 text-white flex items-center gap-2"
             onClick={createQR}
           >
-            Generate QR
+            <span class=" ">Generate</span>
+            <RiEditorAiGenerate class="w-5 h-5" />
           </button>
           <button
-            class="rounded p-2 bg-[#2c4e82] text-white"
+            class="rounded p-2 bg-[#2c4e82] hover:bg-[#244069] hover:shadow-lg transition-all duration-300 text-white flex items-center gap-2"
             onClick={handleDownload}
           >
-            Download
+            <span class="">Download</span>
+            <FiDownload class="w-5 h-5" />
           </button>
         </div>
       </div>
