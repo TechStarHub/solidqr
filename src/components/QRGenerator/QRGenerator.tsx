@@ -14,7 +14,7 @@ import { RiEditorAiGenerate } from "solid-icons/ri";
 import { FiDownload } from "solid-icons/fi";
 
 const qrOption = {
-  quality: 1,
+  // quality: 1,
   errorCorrectionLevel: "H",
   margin: 1,
 };
@@ -41,10 +41,18 @@ export default function QRGenerator() {
 
   const createQR = () => {
     try {
-      QrCode.toCanvas(canvas, qrData(), qrOptions(), (error: any) => {
-        if (error) console.error(error);
-        console.log("success!");
-      });
+      QrCode.toCanvas(
+        canvas,
+        qrData(),
+        {
+          errorCorrectionLevel: "H",
+          margin: 1,
+        },
+        (error: any) => {
+          if (error) console.error(error);
+          console.log("success!");
+        }
+      );
     } catch (e) {
       console.log(e);
     }
@@ -173,13 +181,7 @@ export default function QRGenerator() {
             <label for="qr-quality" class="flex items-center gap-2">
               <span class="">Quality</span>
               <input
-                onInput={(e: any) =>
-                  setQROptions({
-                    ...qrOptions(),
-                    quality: parseInt(e.target.value),
-                  })
-                }
-                value={qrOptions().quality}
+                value={1}
                 max={1}
                 min={0}
                 type="number"
