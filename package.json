@@ -1,7 +1,10 @@
 {
-  "name": "gr-gen",
-  "private": true,
-  "version": "0.0.0",
+  "name": "solidqr",
+  "private": false,
+  "version": "0.0.10",
+  "description": "QR Code Generator",
+  "author": "TechStarHub",
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "dev": "vite",
